@@ -1,12 +1,12 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://myapp.appspot.com/_ah/api",
+  "root" : "https://banded-nuance-820.appspot.com/_ah/api",
   "name" : "quoteendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "bns" : "https://banded-nuance-820.appspot.com/_ah/spi",
     "deadline" : 65.0,
     "type" : "lily"
   },
@@ -32,8 +32,8 @@
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
+      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
       "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.listQuote",
       "request" : {
         "parameters" : {
@@ -57,8 +57,8 @@
       "httpMethod" : "DELETE",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
+      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
       "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.removeQuote",
       "request" : {
         "parameters" : {
@@ -78,8 +78,8 @@
       "httpMethod" : "POST",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
+      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
       "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.insertQuote",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
@@ -94,8 +94,8 @@
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
+      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
       "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.getQuote",
       "request" : {
         "parameters" : {
@@ -115,8 +115,8 @@
       "httpMethod" : "PUT",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
+      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
       "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote",
       "request" : {
         "body" : "autoTemplate(backendRequest)",

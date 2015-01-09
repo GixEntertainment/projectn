@@ -1,11 +1,13 @@
 package com.gixgames.apps.projectn;
 
 import com.gixgames.apps.projectn.PMF;
-
+import com.gixgames.apps.projectn.Util.Constants;
+import com.google.api.server.spi.auth.common.User;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.response.CollectionResponse;
+import com.google.api.server.spi.response.UnauthorizedException;
 import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.datanucleus.query.JDOCursorHelper;
 
@@ -30,11 +32,20 @@ public class QuoteEndpoint {
 	 * persisted and a cursor to the next page.
 	 */
 	@SuppressWarnings({ "unchecked", "unused" })
-	@ApiMethod(name = "listQuote")
+	@ApiMethod(name = "listQuote",  scopes = {Constants.EMAIL_SCOPE},
+			clientIds = {Constants.WEB_CLIENT_ID, 
+		    Constants.ANDROID_CLIENT_ID, 
+		    Constants.IOS_CLIENT_ID,
+		    com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID},
+		    audiences = {Constants.ANDROID_AUDIENCE, Constants.IOS_AUDIENCE})
+	
 	public CollectionResponse<Quote> listQuote(
 			@Nullable @Named("cursor") String cursorString,
-			@Nullable @Named("limit") Integer limit) {
+			@Nullable @Named("limit") Integer limit, 
+			User user) throws UnauthorizedException {
 
+		if (user == null) throw new UnauthorizedException("User is Not Valid");
+		
 		PersistenceManager mgr = null;
 		Cursor cursor = null;
 		List<Quote> execute = null;
@@ -76,8 +87,16 @@ public class QuoteEndpoint {
 	 * @param id the primary key of the java bean.
 	 * @return The entity with primary key id.
 	 */
-	@ApiMethod(name = "getQuote")
-	public Quote getQuote(@Named("id") Long id) {
+	@ApiMethod(name = "getQuote",  scopes = {Constants.EMAIL_SCOPE},
+			clientIds = {Constants.WEB_CLIENT_ID, 
+		    Constants.ANDROID_CLIENT_ID, 
+		    Constants.IOS_CLIENT_ID,
+		    com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID},
+		    audiences = {Constants.ANDROID_AUDIENCE, Constants.IOS_AUDIENCE})
+	
+	public Quote getQuote(@Named("id") Long id, User user) throws UnauthorizedException {
+		if (user == null) throw new UnauthorizedException("User is Not Valid");
+		
 		PersistenceManager mgr = getPersistenceManager();
 		Quote quote = null;
 		try {
@@ -96,12 +115,22 @@ public class QuoteEndpoint {
 	 * @param quote the entity to be inserted.
 	 * @return The inserted entity.
 	 */
-	@ApiMethod(name = "insertQuote")
-	public Quote insertQuote(Quote quote) {
+	@ApiMethod(name = "insertQuote",  scopes = {Constants.EMAIL_SCOPE},
+			clientIds = {Constants.WEB_CLIENT_ID, 
+		    Constants.ANDROID_CLIENT_ID, 
+		    Constants.IOS_CLIENT_ID,
+		    com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID},
+		    audiences = {Constants.ANDROID_AUDIENCE, Constants.IOS_AUDIENCE})
+	
+	public Quote insertQuote(Quote quote, User user) throws UnauthorizedException {
+		if (user == null) throw new UnauthorizedException("User is Not Valid");
+		
 		PersistenceManager mgr = getPersistenceManager();
 		try {
-			if (containsQuote(quote)) {
-				throw new EntityExistsException("Object already exists");
+			if (quote.getId() != null) {
+				if (containsQuote(quote)) {
+					throw new EntityExistsException("Object already exists");
+				}
 			}
 			mgr.makePersistent(quote);
 		} finally {
@@ -118,8 +147,15 @@ public class QuoteEndpoint {
 	 * @param quote the entity to be updated.
 	 * @return The updated entity.
 	 */
-	@ApiMethod(name = "updateQuote")
-	public Quote updateQuote(Quote quote) {
+	@ApiMethod(name = "updateQuote",  scopes = {Constants.EMAIL_SCOPE},
+			clientIds = {Constants.WEB_CLIENT_ID, 
+		    Constants.ANDROID_CLIENT_ID, 
+		    Constants.IOS_CLIENT_ID,
+		    com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID},
+		    audiences = {Constants.ANDROID_AUDIENCE, Constants.IOS_AUDIENCE})
+	public Quote updateQuote(Quote quote, User user) throws UnauthorizedException {
+		if (user == null) throw new UnauthorizedException("User is Not Valid");
+		
 		PersistenceManager mgr = getPersistenceManager();
 		try {
 			if (!containsQuote(quote)) {
@@ -138,8 +174,16 @@ public class QuoteEndpoint {
 	 *
 	 * @param id the primary key of the entity to be deleted.
 	 */
-	@ApiMethod(name = "removeQuote")
-	public void removeQuote(@Named("id") Long id) {
+	@ApiMethod(name = "removeQuote",  scopes = {Constants.EMAIL_SCOPE},
+			clientIds = {Constants.WEB_CLIENT_ID, 
+		    Constants.ANDROID_CLIENT_ID, 
+		    Constants.IOS_CLIENT_ID,
+		    com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID},
+		    audiences = {Constants.ANDROID_AUDIENCE, Constants.IOS_AUDIENCE})
+	public void removeQuote(@Named("id") Long id, User user) throws UnauthorizedException {
+		
+		if (user == null) throw new UnauthorizedException("User is Not Valid");
+		
 		PersistenceManager mgr = getPersistenceManager();
 		try {
 			Quote quote = mgr.getObjectById(Quote.class, id);
