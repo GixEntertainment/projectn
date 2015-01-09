@@ -1,5 +1,5 @@
 package com.gixgames.apps.projectn;
 
-public class test {
+public class test2 {
 
 }

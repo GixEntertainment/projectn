@@ -89,6 +89,22 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "quoteendpoint.updateQuote" : {
+      "path" : "quote",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "quoteendpoint.getQuote" : {
       "path" : "quote/{id}",
       "httpMethod" : "GET",
@@ -105,22 +121,6 @@
           }
         },
         "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "quoteendpoint.updateQuote" : {
-      "path" : "quote",
-      "httpMethod" : "PUT",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -177,15 +177,15 @@
           "$ref" : "Quote"
         }
       },
-      "com.gixgames.apps.projectn.QuoteEndpoint.getQuote" : {
-        "response" : {
-          "$ref" : "Quote"
-        }
-      },
       "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote" : {
         "request" : {
           "$ref" : "Quote"
         },
+        "response" : {
+          "$ref" : "Quote"
+        }
+      },
+      "com.gixgames.apps.projectn.QuoteEndpoint.getQuote" : {
         "response" : {
           "$ref" : "Quote"
         }
