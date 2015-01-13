@@ -89,6 +89,22 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "quoteendpoint.updateQuote" : {
+      "path" : "quote",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
+      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "quoteendpoint.getQuote" : {
       "path" : "quote/{id}",
       "httpMethod" : "GET",
@@ -105,22 +121,6 @@
           }
         },
         "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "quoteendpoint.updateQuote" : {
-      "path" : "quote",
-      "httpMethod" : "PUT",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com" ],
-      "clientIds" : [ "94332242625-pefst92t1vtc5ikq3pt9no1u9r9mchqu.apps.googleusercontent.com", "94332242625-si611cu4p46gufbvgca1i72h2503au3r.apps.googleusercontent.com", "94332242625-sh11taeh99ijt090ondcooket7mgiqqc.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -177,15 +177,15 @@
           "$ref" : "Quote"
         }
       },
-      "com.gixgames.apps.projectn.QuoteEndpoint.getQuote" : {
-        "response" : {
-          "$ref" : "Quote"
-        }
-      },
       "com.gixgames.apps.projectn.QuoteEndpoint.updateQuote" : {
         "request" : {
           "$ref" : "Quote"
         },
+        "response" : {
+          "$ref" : "Quote"
+        }
+      },
+      "com.gixgames.apps.projectn.QuoteEndpoint.getQuote" : {
         "response" : {
           "$ref" : "Quote"
         }
