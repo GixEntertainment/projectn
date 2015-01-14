@@ -32,7 +32,7 @@ public class QuoteEndpoint {
 	 * persisted and a cursor to the next page.
 	 */
 	@SuppressWarnings({ "unchecked", "unused" })
-	@ApiMethod(name = "listQuote",  scopes = {Constants.EMAIL_SCOPE},
+	@ApiMethod(name = "listQuote",  scopes = {Constants.EMAIL_SCOPE, Constants.LOGIN_SCOPE},
 			clientIds = {Constants.WEB_CLIENT_ID, 
 		    Constants.ANDROID_CLIENT_ID, 
 		    Constants.IOS_CLIENT_ID,
@@ -87,7 +87,7 @@ public class QuoteEndpoint {
 	 * @param id the primary key of the java bean.
 	 * @return The entity with primary key id.
 	 */
-	@ApiMethod(name = "getQuote",  scopes = {Constants.EMAIL_SCOPE},
+	@ApiMethod(name = "getQuote",  scopes = {Constants.EMAIL_SCOPE, Constants.LOGIN_SCOPE},
 			clientIds = {Constants.WEB_CLIENT_ID, 
 		    Constants.ANDROID_CLIENT_ID, 
 		    Constants.IOS_CLIENT_ID,
@@ -115,7 +115,7 @@ public class QuoteEndpoint {
 	 * @param quote the entity to be inserted.
 	 * @return The inserted entity.
 	 */
-	@ApiMethod(name = "insertQuote",  scopes = {Constants.EMAIL_SCOPE},
+	@ApiMethod(name = "insertQuote",  scopes = {Constants.EMAIL_SCOPE, Constants.LOGIN_SCOPE},
 			clientIds = {Constants.WEB_CLIENT_ID, 
 		    Constants.ANDROID_CLIENT_ID, 
 		    Constants.IOS_CLIENT_ID,
@@ -147,7 +147,7 @@ public class QuoteEndpoint {
 	 * @param quote the entity to be updated.
 	 * @return The updated entity.
 	 */
-	@ApiMethod(name = "updateQuote",  scopes = {Constants.EMAIL_SCOPE},
+	@ApiMethod(name = "updateQuote",  scopes = {Constants.EMAIL_SCOPE, Constants.LOGIN_SCOPE},
 			clientIds = {Constants.WEB_CLIENT_ID, 
 		    Constants.ANDROID_CLIENT_ID, 
 		    Constants.IOS_CLIENT_ID,
@@ -174,7 +174,7 @@ public class QuoteEndpoint {
 	 *
 	 * @param id the primary key of the entity to be deleted.
 	 */
-	@ApiMethod(name = "removeQuote",  scopes = {Constants.EMAIL_SCOPE},
+	@ApiMethod(name = "removeQuote",  scopes = {Constants.EMAIL_SCOPE, Constants.LOGIN_SCOPE},
 			clientIds = {Constants.WEB_CLIENT_ID, 
 		    Constants.ANDROID_CLIENT_ID, 
 		    Constants.IOS_CLIENT_ID,
